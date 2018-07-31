@@ -1,31 +1,150 @@
 {% extends "layout_user.html" %}
 {% block content %}
 
+<style type="text/css">
+	
+	
+	div.email{
+	background: transparent;
+	position: fixed;
+    top: 120px;
+    left:110px;
+    width: 320px;
+    border: 3px solid black;
+    border-radius: 7px;
 
- <body class="fixed-bg"  background="{{ url_for('static', filename='pictures/Login_Background.png') }}">
+	}
+
+	div.password{
+
+	position: fixed;
+    top: 175px;
+    left:110px;
+    width:320px;
+    border: 3px solid black;
+    border-radius: 7px;
+
+
+	}
+
+	.email-input {
+		background: transparent;
+	}
+	.password-input{
+		background: transparent;
+	}
+
+	div.login{
+	background: transparent;
+	position: fixed;
+    top: 230px;
+    left:235px;
+
+    
+    
+	}
+
+	div.signup{
+	background: transparent;
+	position: fixed;
+    top: 307px;
+    left: 300px;
+    color: black;
+    
+    
+	}
+
+	div.word{
+	background: transparent;
+	position: fixed;
+    top: 300px;
+    left: 55px;
+
+	}
+
+	.para{
+		position: fixed;
+		top: 450px;
+		left: 70px;
+		font-style: italic;
+		font-size: 22px;
+		color: black;
+		width: 400px;
+	}
+	.paraa{
+		position: fixed;
+		top: 480px;
+		left: 70px;
+		font-style: italic;
+		font-size: 22px;
+		color: black;
+		width: 400px;
+	}
+	.paraaa{
+		position: fixed;
+		top: 545px;
+		left: 70px;
+		font-style: italic;
+		font-size: 22px;
+		color: black;
+		width: 400px;
+	}
+
+
+	
+
+
+
+
+</style>
+
+
+ <body class="fixed-bg"  background="{{ url_for('static', filename='pictures/ade1.png') }}">
 
 <center>
 <div class="add-user">
  
-<div class="page-header">
+<div >
  
 <h2>**LOGO**</h2>
  
   </div>
-<form class="textbox" action="{{ url_for('users.login') }}" method="post">
+
+<form  class="textbox" style="background: transparent;" action="{{ url_for('users.login') }}" method="post">
 
     {{ form.csrf_token }}<br>
-    {{ form.email(placeholder="email") }} <br>
-    {{ form.password(placeholder="Password") }}<br>
+    <div class="email">
+    {{ form.email(placeholder="E-mail", class="email-input") }} 
+</div><br>
+   <div class="password" style="">{{ form.password(placeholder="PASSWORD" , class="password-input") }}
+   </div><br>
 
-    <button class="button" type="submit">Log in</button>
+    <div class="login">
+    	<div class="container">
+  <div class="row">
+    <div class="col-sm">
+     
+    <button class="button" type="submit" style="background: transparent; font-size: 15px;">Log in</button>
+</div>
+</div>
+</div>
+</div>
+
   </form>
 
   <br>
-
-  <h9> don't have an account?</h9><a href="/register">register</a>
-
+  <div class="word">
+  <h4 style="color: black;">Create Your Account Here-</h4>
+</div>
+  <div class="signup">
+  <a href="/register" style="color: black; font-size: 18px" class="button">SIGN UP!</a>
+</div>
+</div>
   </div>
+  <p class="para">Welcome to Roots,</p>
+  	<p class="paraa">Where connecting stories of local life to curious</p>,
+  	<p class="paraaa">explorers is possible</p>
 </center>
  </body>
+
 {% endblock %}

@@ -2,7 +2,7 @@
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100%;
 }
 /*
 form, input {
@@ -64,9 +64,9 @@ form, input, textarea, select, button, meter, progress {
 
 
 
-.button {
+/*.button {
 
-    background-color: #1C6E8C;
+background: transparent;
 
     border: none;
 
@@ -74,15 +74,17 @@ form, input, textarea, select, button, meter, progress {
 
     padding: 6px 60px;
 
-    text-align: center;
 
     text-decoration: none;
 
     display: inline-block;
 
-    font-size: 20px;
 
     cursor: pointer;
 
+<<<<<<< HEAD
     border-radius:7px;
 }*/
+
+}*/
+
