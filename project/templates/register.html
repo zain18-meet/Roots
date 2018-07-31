@@ -1,17 +1,16 @@
 {% extends "layout_user.html" %}
 {% block content %}
 
-<body>
+<body class="fixed-bg"  background="{{ url_for('static', filename='pictures/register_bg.PNG') }}">
 
   <div class="add-user">
 
     <div class="page-header">
 
     <center>
-
-      <h2>Register New User</h2>
-    </div>
-    <form action="{{ url_for('users.register') }}" method="post">
+        <h2 class="w3-center">Register</h2>
+        <p class="w3-center w3-large">Create a new account here:</p>
+    <form class="w3-center" action="{{ url_for('users.register') }}" method="post">
 
       {{ form.csrf_token }}
       {{ form.email(placeholder="Email Adress") }} <br>
@@ -19,11 +18,12 @@
       {{ form.password(placeholder="Password") }} <br>
       {{ form.confirm(placeholder="Confirm Password") }} <br>
 
-    <button class="btn btn-sm btn-success" type="submit">Register User</button>
-  </form>
- </center>
+    <button class="w3-button w3-black" type="submit">Register User</button>
+    </form>
 
+
+    </center>
     </div>
-</div>
- </body>
+  </div>
+</body>
 {% endblock %}
