@@ -12,11 +12,12 @@
       <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
       <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 
-     <link href="css/heroic-features.css" rel="stylesheet">
-     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+      <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/heroic-features.css') }}">
+
   </head>
   
   <body>
+
 
     <!-- Navbar (sit on top) -->
 <div class="w3-top">
@@ -36,6 +37,9 @@
       <br><br>
   </div>
 </div>
+
+<div class="container">
+  
       <!-- child template -->
       {% block content %}
       {% endblock %}
