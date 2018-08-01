@@ -25,7 +25,7 @@
        <a href="{{url_for('profile' , user_id=current_user.id)}}" class="w3-bar-item w3-button">Profile</a>
 
       <a href="{{url_for('apply')}}" class="w3-bar-item w3-button">Become a Storyteller</a>
-      <a href="" class="w3-bar-item w3-button">About</a>
+      <a href="{{url_for('about')}}" class="w3-bar-item w3-button">About</a>
 
     </div>
       current user: {{ current_user.name }}
