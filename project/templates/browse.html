@@ -1,28 +1,38 @@
 {% extends "layout.html" %}
 {% block content %}
 
+<br><br><br>
+<header class="jumbotron my-4">
+  <h1 class="display-3">EXPLORE</h1>
+</header>
 
-
-<div>
+<div class="row text-center">
 	{% for journey in all_journeys %}
-	 	<center>
-		<div>
-	    	<img src="{{url_for('static', filename='profile.png')}}"  width=500 height=265 >
-	    	<h2>{{ journey.title }}</h2	><br>
-
-	    	<h3> The journey will be at {{ journey.location }}</h3><br>
-	    	<h3>Price: {{ journey.price }}</h3><br>
-	    	<h3> This journey would intrest people who are {{ journey.category }}</h3><br>
-	    	<a href="{{url_for('display_journey', journey_id=journey.id)}}"> View Details </a>
-	    	<br><br>	
-	    ------------------------------------------------------------- 
-	    	
+		<div class="col-lg-3 col-md-6 mb-4">
+			<div class="card">
+	    		<img class="card-img-top" src="{{url_for('static', filename='profile.png')}}">
+	    		<div class="card-body">
+	    			<h4 class="card-title">{{ journey.title }}</h4>
+	    			<h5 class="card-text"> The journey will be at {{ journey.location }}</h5>
+	    			<p class="card-text">Price: {{ journey.price }}</p>
+	    			<p class="card-text"> This journey would intrest people who are {{ journey.category }}</p>
+	    		</div>
+	    		<div class="card-footer">
+	    			<a href="{{url_for('display_journey', journey_id=journey.id)}}" class="btn btn-primary"> View Details </a>
+	    		</div>
+	    	</div>
 	    </div>
-	</center>
 	{% endfor %}
-
 </div>
 
+<br><br>
 
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">Roots Company @2018</p>
+    </div>
+	</footer>
+
+</div>
 
 {% endblock %}
