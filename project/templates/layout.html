@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-      <title>Roots</title>
+      <title>Roots Company</title>
+      <link rel="icon" href="favicon.ico" type="image/x-icon"/>
+
       <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
       <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/style.css') }}">
       
@@ -12,7 +14,7 @@
       <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
       <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 
-      <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/heroic-features.css') }}">
+
 
   </head>
   
@@ -22,7 +24,7 @@
     <!-- Navbar (sit on top) -->
 <div class="w3-top">
   <div class="w3-bar w3-white w3-card" id="myNavbar">
-    <a href="{{url_for('browse')}}" class="w3-bar-item w3-button w3-wide">LOGO</a>
+    <a href="{{url_for('browse')}}" class="w3-bar-item w3-button w3-wide"><img src="{{ url_for('static', filename='pictures/image1.PNG') }}" style="width: 70px"></a>
     <!-- Right-sided navbar links -->
     <div class="w3-right w3-hide-small">
       <a href="{{url_for('browse')}} " class="w3-bar-item w3-button">Home</a>
@@ -32,15 +34,13 @@
       <a href="{{url_for('about')}}" class="w3-bar-item w3-button">About</a>
 
     </div>
-      current user: {{ current_user.name }}
+    <!--  current user: {{ current_user.name }}
       user_id: {{current_user.id}}
-      <br><br>
+      <br><br> -->
   </div>
 </div>
 
-<div class="container">
   
-      <!-- child template -->
       {% block content %}
       {% endblock %}
 

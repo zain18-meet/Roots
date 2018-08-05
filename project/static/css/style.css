@@ -1,11 +1,153 @@
-.fixed-bg {
+    .fixed-bg {
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100%;
+    }
+
+
+    div.email{
+
+    position: fixed;
+    top: 120px;
+    left:110px;
+    width: 320px;
+    border: 3px solid black;
+    border-radius: 7px;
+
+    }
+
+    div.password{
+
+    position: fixed;
+    top: 175px;
+    left:110px;
+    width:320px;
+    border: 3px solid black;
+    border-radius: 7px;
+
+
+    }
+
+    .email-input {
+
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    width: 285px;
+    top: 120px;
+    left:110px;
+    border: 0px ;
+    background: transparent;
+    margin: 10px;
+
+    }
+    .password-input{
+        box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    width: 285px;
+    top: 120px;
+    left:110px;
+    border: 0px ;
+    background: transparent;
+    margin: 10px;
+    }
+
+    div.login{
+    background: transparent;
+    position: fixed;
+    top: 230px;
+    left: -210px;
+    }
+
+    div.signup{
+    background: transparent;
+    position: fixed;
+    top: 307px;
+    left: 175px;
+    color: black;
+    
+    
+    }
+
+    div.word{
+    background: transparent;
+    position: fixed;
+    top: 300px;
+    left: 55px;
+
+    }
+
+    .para{
+        position: fixed;
+        top: 450px;
+        left: 70px;
+        font-style: italic;
+        font-size: 22px;
+        color: black;
+        width: 400px;
+    }
+    .paraa{
+        position: fixed;
+        top: 480px;
+        left: 70px;
+        font-style: italic;
+        font-size: 22px;
+        color: black;
+        width: 400px;
+    }
+    .paraaa{
+        position: fixed;
+        top: 545px;
+        left: 70px;
+        font-style: italic;
+        font-size: 22px;
+        color: black;
+        width: 400px;
+    }
+    .story{
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    }
+    .applym{
+        color: white;
+    }
+    .heybab{
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    }
+
+    .bingo{
+    top: 100px;
+    height: 1000px;
+    width: 100%;
+    
+    }
+
+    .parallax {
+    /* The image used */
+
+    /* Set a specific height */
+    height: 1000px;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
-
+    .underline {
+    text-decoration: underline
+    }
 /*
 form, input {
 

@@ -1,12 +1,11 @@
 {% extends "layout.html" %}
 {% block content %}
-  
-<center>
+<body class="story" background="{{ url_for('static', filename='pictures/story1.jpeg') }}">
+<div class="applym">
   Hi {{ current_user.name }},
-  <br><br><br>
-  <p>Becoming a storyteller means you will get to share your ambitious insipring story of your life. you will be free to take people on a journey in the places you grew in or places you would like.</p>
-
-  <br><br><br><br><br><br><br><br><br>
+  
+  <h4 style="color: white; font-size: 18px; ">Becoming a storyteller means you will get to share <br> your ambitious insipring story of your life.<br> you will be free to take people on a journey in<br> the places you grew in or places you would like.</h4>
+  <br><br><br><br><br><br>
    <form class ="addpost" action="{{url_for('apply')}}" method="POST">
     Country:<br>
   <input type="text" name="country" placeholder="Enter Your Country" required>
@@ -16,21 +15,22 @@
   <br>
   Birth Date:<br>
   <input type="text" name="birthday" placeholder="Enter Your birthDate"required>
-  <br><br>
   <br>
   City:<br>
   <input type="text" name="city" placeholder="Enter Your City" required>
   <br>
+ 
 
   Phone Number<br>
   <input type="text" name="number" placeholder="Enter Your Phone Number please" required>
   <br><br>
   <input type="hidden" name="user_id" value= "{{ session['user_id'] }}" >
+  </div>
   <button class="btn btn-lg postbtn" type="submit">Submit!</button>
 
   </form>
 
-</center>
+
 </body>
 
 {% endblock %}

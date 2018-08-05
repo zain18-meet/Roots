@@ -1,27 +1,39 @@
 {% extends "layout.html" %}
 {% block content %}
 
-<!DOCTYPE html>
-<html>
 <head>
 	<title> Profile </title>
 </head>
-<body>
+<body class="heybab" background="{{url_for('static', filename='pictures/hi5.jpg')}}">
+	
 
 
 {%if user%}
-<img src="{{url_for('static', filename='profile.png')}}" />
+<img src="{{url_for('static', filename='pictures/profile.png')}}" />
 <h2> {{user.name}} </h2>
 <h3> {{user.email}} </h3>
 {%if is_user==True%}
-	<p>this is your profile<p>
+	<p>this is your profile</p>
 {%else%}
 	<p>this is not your profile</p>
 {%endif%}
 {%endif%}
+</div>
 
+
+<style type="text/css">
+	.heylady{
+	color: black;
+  background:rgba(255,255,255,0.5);
+
+
+border-style: outset;
+border-width:30px;
+border-radius: 50px;
+}
+</style>
 </body>
-</html>
+
 
 
 {% endblock %}

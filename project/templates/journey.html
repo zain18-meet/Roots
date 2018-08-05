@@ -1,34 +1,31 @@
 {% extends "layout.html" %}
 {% block content %}
-<body class="parallax" background="{{ url_for('static', filename='pictures/h3.jpg') }}"">
 
+<br><br><br><br>
+<!-- 
+<frameset cols="25%,*,25%">
+	<frame src="frame_a.htm"> -->
+
+
+<body class="parallax">
+ 	<div class="heybaby">
 	<center>
-	<div> <img class="img1" src="{{ journey.picture }}"> </div>
+	<h2 class="underline"> storyteller: </h2> <h3>{{creator.name}}</h3>
 	<div> <h1> {{journey.title}} </h1>
-	<h1> storyteller : {{creator.name}} </h1>
-	<h1> location : {{journey.location}} </h1>
-	<h1> description : {{journey.description}} </h1>
-	<h1> duration : {{journey.duration}} </h1>
-	<h1> price : {{journey.price}} </h1>
-	<h1> category : {{journey.category}} </h1>
-	<h1> requirements : {{journey.requirements}} </h1>
-	<h1> people range : {{journey.people_range}} </h1>
+	<h2 class="underline"> location: </h2>{{journey.location}} </h1>
+	<h2 class="underline"> description: </h2>{{journey.description}} </h1>
+	<h2 class="underline"> duration: </h2>{{journey.duration}} </h1>
+	<h2 class="underline"> price: </h2>{{journey.price}} </h1>
+	<h2 class="underline"> category: </h2>{{journey.category}} </h1>
+	<h2 class="underline"> requirements: </h2>{{journey.requirements}} </h1>
+	<h2 class="underline"> people range: </h2>{{journey.people_range}} </h1>
+	<div> <img class="img1" src="{{ journey.picture }}"> </div>
+
 	</center>
+
 </div>
-<style type="text/css">
-.parallax {
-    /* The image used */
+</div>
 
-    /* Set a specific height */
-    height: 1000px;
-
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-</style>
 </body>
 
 
