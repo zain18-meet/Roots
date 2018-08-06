@@ -88,3 +88,27 @@ form, input, textarea, select, button, meter, progress {
 
     border-radius:7px;
 }
+
+.col-md-8 {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  width: 700px;
+  padding: 20px;
+  overflow: hidden;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+  font:normal 20px/1 Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+  color: white;
+  text-align: center;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  background: transparent;
+ 
+  
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.2) ;
+
+}
+
+
+

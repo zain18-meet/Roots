@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% block content %}
-
+<div class="div1">
 <img src="{{url_for('static', filename='profile.png')}}">
 <h2> {{profile.name}} </h2>
 <h3> {{profile.email}} </h3>
@@ -15,5 +15,5 @@
 {% else %}
 	<p>this is not your profile</p>
 {% endif %}
-
+</div>
 {% endblock %}

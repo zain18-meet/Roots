@@ -49,6 +49,7 @@ class User(UserMixin, db.Model):
 
 class Journey(UserMixin, db.Model):
 
+
     __tablename__ = "journey"
 
 
