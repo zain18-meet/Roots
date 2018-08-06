@@ -1,67 +1,147 @@
 <!DOCTYPE html>
 <html>
+
   <head>
-      <title>ROOTS</title>
+
+      <title>Roots - Embrace Diversity</title>
       <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
       <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/style.css') }}">
-      
+
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
       <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
       <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
-      <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 
-        <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
 
   </head>
   
-  <body>
-
-      <!-- child template -->
+<body>
+     
+  <!--Navigation bar -->
+    <nav class="navbar navbar-inner">
       
-         <nav class="navbar navbar-inverse">
-         <ul class="nav navbar-nav">
-    
+      <div class="navbar-header">
+        <a class="navbar-brand" href="{{url_for('browse')}}">Roots</a>
+      </div>
 
-    <li><a href="{{url_for('browse')}}">LOGO</a></li>
-    {% if current_user.is_authenticated %}
-  
-        {% if current_user.is_storyteller %}
-        <li><a href="{{url_for('display_notifications', st_id=current_user.id)}}"><span class="glyphicon glyphicon-bell"></span> </a> </li>
-        {%else%}
+      <ul class="nav navbar-nav navbar-right">
+      
+        {% if current_user.is_authenticated %}
+      
+          {% if current_user.is_storyteller %}
+            <li class="nav-option-border" ><a href="{{url_for('display_notifications', st_id=current_user.id)}}"><span class="glyphicon glyphicon-bell"></span></a></li>
+            {%else%}
+
+          {% endif %}
+
+          <li class="nav-option-border"><a href="{{url_for('profile', user_id=current_user.id)}}">     {{current_user.name}}</a></li>
+          <li class="nav-option-border"><a href="{{url_for('display_wishlist', user_id=current_user.id)}}">My Wishlist</a></li>
+
+          <li class="nav-option-border"><a href="{{url_for('users.logout')}}">Logout</a></li>
+
+          {%else%}
+
+          <li  class="nav-option-border"><a data-toggle="modal" data-target="#login">Login</a></li>
 
         {% endif %}
-    <li><a href="{{url_for('profile', user_id=current_user.id)}}"><span class="glyphicon glyphicon-user"></span>     {{current_user.name}}</a></li>
-    <li><a href="{{url_for('display_wishlist', user_id=current_user.id)}}">Wishlist</a></li>
-    <li><a href="{{url_for('users.logout')}}">Logout</a></li>
-    {%else%}
 
-    <li><a href="{{url_for('users.login')}}">Login</a></li>
-    {% endif %}
-    
-  </ul>
+      </ul>
 
-</nav>
+    </nav>
 
-
-<!--       current user: {{ current_user.name }}
-      user_id: {{current_user.id}}
- -->
 <div class="container">
   {% block content %}
-      {% endblock %}
-
-
-
-
+  {% endblock %}
 </div>
 
+  {% if  form %}
+  <!-- Login Modal -->
+  <div id="login" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Login Model content aka Form-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Login</h4>
+        </div>
+        <div class="modal-body">
+          <form action="{{ url_for('users.login') }}" method="post">
+
+            {{ form.csrf_token }}<br>
+            <div class="form-group">
+              <label for="email">Email:</label>
+            {{ form.email(placeholder="email", class="form-control") }} <br>
+            </div>
+            <div class="form-group">
+              <label for="password">Password:</label>
+            {{ form.password(placeholder="Password", class="form-control") }}<br>
+            </div>
+          <br>
+          <h9>Don't have an account?</h9><a data-dismiss="modal" data-toggle="modal" data-target="#register"> register</a>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-default" type="submit">Login</button>
+        </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+  {% endif %}
+
+
+
+
+
+  {% if  form %}
+  <!-- Register Modal -->
+  <div id="register" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Register Modal content aka Form-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Register</h4>
+        </div>
+        <div class="modal-body">
+        <form action="{{ url_for('users.register') }}" method="post">
+
+          {{ form.csrf_token }}
+
+          <div class="form-group">
+              <label for="email">Email:</label>
+          {{ form.email(placeholder="Email Adress", class="form-control") }} <br>
+          </div>
+
+          <div class="form-group">
+              <label for="name">Name:</label>
+          {{ form.name(placeholder="Full Name", class="form-control") }} <br>
+          </div>
+
+          <div class="form-group">
+              <label for="password">Password:</label>
+          {{ form.password(placeholder="Password", class="form-control" ) }} <br>
+          </div>
+
+          <div class="form-group">
+              <label for="confirm">Confirm Password:</label>
+          {{ form.confirm(placeholder="Confirm Password", class="form-control") }} <br>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-default" type="submit">Register User</button>
+        </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+
+  {% endif %}
 
 </html>

@@ -3,14 +3,18 @@ from flask import session as login_session
 from flask_login import login_required, current_user
 from . import app, db
 import time
+from project.forms import RegisterForm, LoginForm
 
 from project.models import Journey, User, Ratings, Notification, Wishlist, Question
 
 
 @app.route('/')
 def browse():
+	form = None
 	all_journeys = Journey.query.all()
-	return render_template('browse.html', all_journeys=all_journeys)
+	if not current_user.is_authenticated:
+		form = RegisterForm(request.form)
+	return render_template('browse.html', all_journeys=all_journeys, form=form)
 
 
 @app.route('/apply', methods=['GET', 'POST'])

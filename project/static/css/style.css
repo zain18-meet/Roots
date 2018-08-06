@@ -14,64 +14,19 @@
     background-size: cover;
 }
 
-form, input {
-
-    -webkit-appearance: textfield;
-
-    background-color: #D9DBDC;
-
-    cursor: text;
-
-    padding: 10px 10px;
-
-    border-width: 0px;
-
-    border-style: inset;
-
-    border-color: #D9DBDC;
-
-    border-image: initial;
-
-    border-radius: 7px;
-
+.navbar-inner {
+    background-color:transparent;
+    color:white;
+    font: normal 18px/1 Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif,bold; ;
 }
 
-
-.textbox, input, textarea, select, button {
-
-    text-rendering: auto;
-
-    color: black;
-
-    letter-spacing: normal;
-
-    word-spacing: normal;
-
-    text-transform: none;
-
-    text-indent: 0px;
-
-    text-shadow: none;
-
-    display: inline-block;
-
-    text-align: start;
-
-    margin: 0em;
-
-    font: 400 13.3333px Arial;
-
+.nav-option-border {
+    border-right: 2px solid white;
 }
 
-
-
-form, input, textarea, select, button, meter, progress {
-
-    -webkit-writing-mode: horizontal-tb !important;
-
+.guy{
+    right: 0px;
 }
-
-
 
 .button2 {
 
@@ -155,7 +110,8 @@ form, input, textarea, select, button, meter, progress {
   -webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;
   box-sizing: content-box;
-  width: 1100px;
+  width: 900px;
+
   padding: 20px;
   overflow: hidden;
   -webkit-border-radius: 6px;
