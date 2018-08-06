@@ -1,5 +1,5 @@
 
-body{
+.body1{
      background-image: url("image1.png");
      height: 100%; 
     background-position: center;
@@ -130,6 +130,27 @@ form, input, textarea, select, button, meter, progress {
   text-overflow: ellipsis;
 }
 
+.head2 {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  border: none;
+  font: normal 60px/1 Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif,bold;
+  color: black;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+}
+
+.head3 {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  border: none;
+  font: normal 30px/1 Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif,bold;
+  color: black;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+}
 .div1 {
   -webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;
@@ -152,7 +173,7 @@ form, input, textarea, select, button, meter, progress {
 }
 
 .button2s {
- -webkit-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;
   box-sizing: content-box;
   padding: 10px 20px;
@@ -161,7 +182,7 @@ form, input, textarea, select, button, meter, progress {
   border-radius: 30px;
   font: normal 16px/normal Arial,bold;
   color: white;
-  background:rgba(26,255,26,0.6);
+  background:rgba(0,0,0,0.3);
   
 
 }
@@ -183,4 +204,21 @@ form, input, textarea, select, button, meter, progress {
 .div2{
      background:rgba(400,400,400,0.0);
 
+}
+
+.info{
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  width: 1100px;
+  padding: 20px;
+  overflow: hidden;
+  -webkit-border-radius: 6px;
+  border-radius: 1px;
+  font:normal 20px/1 Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+  color: black;
+  text-align: left;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  background:rgba(0,0,0,0.1);
 }

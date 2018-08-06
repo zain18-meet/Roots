@@ -16,11 +16,11 @@
 		{% if profile.profile_img ==  none %}
 		<img src="{{url_for('static', filename='pictures/profile.png')}}" />
 		{% else %}
-		<img src="{{current_user.profile_img}}" />
+		<img src="{{current_user.profile_img}}"/>
 		{% endif %}
 		</div>
 
-		<div class = "col-md-9">
+		<div class = "col-md-9 ">
 		<h2> {{profile.name}} </h2>
 		<h3> {{profile.city}} </h3>
 		<h3> {{profile.country}} </h3>

@@ -2,12 +2,13 @@
 {% block content %}
 
 <div class= "container-fluid">
-<img class="img1" src="{{ journey.picture }}">
- <h1> {{journey.title}} </h1>
+<img src="{{ journey.picture }} " style="width: 1600px; height: 450px; position: relative; top: -20px; left: -95px; ">
+
+ <h1 class="head2"> {{journey.title}} </h1>
 <div class="row">
   <div class="col-sm-6 col-md-4">
     <div class="thumbnail">
-      <img src="{{url_for('static', filename='profile.png')}}" class="img-fluid" alt="Responsive image">
+      <img src="{{url_for('static', filename='profile.png')}}" class="img-fluid" alt="Responsive image" style="border-radius: 50%; width: 100px; height: 100px;">
       <div class="caption">
         <h3><a href="{{url_for('profile', user_id=journey.creator_id)}}"> {{creator.name}} </a></h3>
         <p>{{creator.bio}}</p>
@@ -17,11 +18,11 @@
 
 
 
-	<div class = "col-md-8">
+	<div class = "col-md-8 info">
 	<p> location : {{journey.location}} </p>
 	<p> description : {{journey.description}} </p>
 	<p> duration : {{journey.duration}} </p>
-	<p></p>> price : {{journey.price}} </p>
+	<p> price : {{journey.price}} </p>
 	<p> category : {{journey.category}} </p>
 	<p> requirements : {{journey.requirements}} </p>
 	<p> people range : {{journey.people_range}} </p>
@@ -29,11 +30,11 @@
     {% if current_user.is_authenticated %}
 
 	<form action="{{url_for('im_interested', interested_user_id=current_user.id, st_id=current_user.id, journey_id=journey.id)}}" method="POST">
-	<button type="submit"> I'm Interested! </button>
+	<button class="button2s" type="submit"> I'm Interested! </button>
 	</form>
  	{%else%}
  	<form action="{{url_for('users.login')}}">
- 	<button type="submit"> I'm Interested! </button>	
+ 	<button class="button2s" type="submit"> I'm Interested! </button>	
     </form>
     {% endif %}
 
@@ -42,7 +43,7 @@
 
 <div class= "row">
 <div class= "col-md-6">
-<h2>Reviews of {{ journey.title }}</h2>
+<h2 class="head3">Reviews of {{ journey.title }}</h2>
 
 {% for rating in all_ratings %}
 
@@ -56,7 +57,7 @@ at: {{rating.time}}
 
 </div>
 <div class= "col-md-6">
-<h2> Questions about {{journey.title}} </h2>
+<h2 class="head3"> Questions about {{journey.title}} </h2>
 
 {% for question in all_questions %}
 {{question.title}} by {{question.user_id}} at {{question.time}}<br>
@@ -84,12 +85,12 @@ at: {{rating.time}}
 	<input type="text" name="title" required>
 	Review:
 	<input type="text" name="review" required>
-	<button type="submit"> Add Review </button>
+	<button class="button2s" type="submit"> Add Review </button>
 
 	{%else%}
 
 	<input type="text" name="review" required>
-	<button type="submit"> Add Review </button>
+	<button class="button2s" type="submit"> Add Review </button>
 
 </form>
    {% endif %}
@@ -104,12 +105,12 @@ at: {{rating.time}}
 	<input type="text" name="title" required>
 	Question
 	<input type="text" name="question" required>
-	<button type="submit"> Ask! </button>
+	<button class="button2s" type="submit"> Ask! </button>
 </form>
 
 	    {%else%}
  	<form action="{{url_for('users.login')}}">
- 	<button type="submit"> Ask! </button>	
+ 	<button  class="button2s" type="submit"> Ask! </button>	
     </form>
 
     {% endif %}
