@@ -1,3 +1,12 @@
+
+body{
+     background-image: url("boat-daylight-forest-675763.jpg");
+     height: 100%; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .fixed-bg {
     background-attachment: fixed;
     background-position: center;
@@ -66,7 +75,7 @@ form, input, textarea, select, button, meter, progress {
 
 
 
-.button {
+.button2 {
 
     background-color: #1C6E8C;
 
@@ -90,6 +99,44 @@ form, input, textarea, select, button, meter, progress {
 }
 
 .col-md-8 {
+}
+
+.input {
+   display: inline-block;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  padding: 10px 20px;
+  border: 1px solid #b7b7b7;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  font: normal 16px/normal "Georgia", Times, serif;
+  color: black;
+  -o-text-overflow: clip;
+  text-overflow: clip;
+  background: rgba(255,255,255,0.5);
+  -webkit-box-shadow: 2px 2px 2px 0 rgba(0,0,0,0.2) inset;
+  box-shadow: 2px 2px 2px 0 rgba(0,0,0,0.2) inset;
+  text-shadow: 1px 1px 0 rgba(255,255,255,0.66) ;
+  -webkit-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+  -moz-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+  -o-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+  transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+}
+
+.head1 {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  border: none;
+  font: normal 40px/1 Georgia, serif;
+  color: white;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+}
+
+.div1 {
+
   -webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;
   box-sizing: content-box;
@@ -104,11 +151,44 @@ form, input, textarea, select, button, meter, progress {
   -o-text-overflow: ellipsis;
   text-overflow: ellipsis;
   background: transparent;
- 
-  
+
+/*  font:normal 20px/1 Georgia, serif ;
+  color: black;
+  text-align: center;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  background: rgba(255, 255, 255, 0.4);*/
+
   text-shadow: 1px 1px 1px rgba(0,0,0,0.2) ;
 
 }
 
+/*.button1 {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  border: none;
+  font: normal normal bold 63px/1 Georgia, serif;
+  color: black;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+}*/
 
+.words {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  border: none;
+  font: normal 24px/1 Georgia, serif;
+  color: black;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  display: inline-block;
+  text-align: right;
+  width: 180px;
+}
+
+.div2{
+     background:rgba(400,400,400,0.6);
+}
 
