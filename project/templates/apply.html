@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% block content %}
-  
+  <body class="body1">
 <center>
 <!--   Hi {{ current_user.name }}, -->
   <br><br><br>
@@ -20,33 +20,40 @@ Be careful with your words- remember that your listeners may know nothing about 
    <form class="div2" action="{{url_for('apply')}}" method="POST">
     
    
- 
-  <label for="Profession" class="words">Profession</label>  
-  <input class="input" type="text" name="profession" placeholder="Enter Your Job" required>
-  <br><br>
-  <label for="Day Of Birth" class="words">Day Of Birth</label> 
-  <input class="input" type="text" name="birthday" placeholder="Enter Your birthDate"required>
-  <br><br>
-  <label for="country" class="words">Country</label> 
-  <input class="input" type="text" name="country" placeholder="Enter Your Country" required>
-  <br><br>
-  <label for="City" class="words">City</label> 
-  <input class="input" type="text" name="city" placeholder="Enter Your City" required>
-  <br><br>
-  <label for="Phone Number" class="words">Phone Number</label> 
-  <input class="input" type="text" name="number" placeholder="Enter Your Phone Number" required>
-  <br><br>
-
-    <label for="bio" class="words">Bio:</label> 
-  <input class="input" type="text" name="bio" placeholder="Enter Your Bio" required>
-  <br><br>
-
-    <label for="Picture" class="words"> Picture:</label> 
-  <input class="input" type="text" name="picture" placeholder="Enter Your Picture" required>
-  <br><br>
-
-
+  <div class = "form-group" > 
+    <label for="Profession" class="words">Profession</label>  
+    <input class="input" type="text" name="profession" placeholder="Enter Your Job" required>
+  </div>
   <br>
+  <div class = "form-group" > 
+    <label for="Day Of Birth" class="words">Day Of Birth</label> 
+    <input class="input" type="text" name="birthday" placeholder="Enter Your birthDate"required>
+  </div>
+  <br>
+  <div class = "form-group" > 
+    <label for="country" class="words">Country</label> 
+    <input class="input" type="text" name="country" placeholder="Enter Your Country" required>
+  </div>
+  <br>
+  <div class = "form-group" > 
+    <label for="City" class="words">City</label> 
+    <input class="input" type="text" name="city" placeholder="Enter Your City" required>
+  </div>
+  <br>
+  <div class = "form-group" > 
+    <label for="Phone Number" class="words">Phone Number</label> 
+    <input class="input" type="text" name="number" placeholder="Enter Your Phone Number" required>
+  </div>
+  <br>
+  <div class = "form-group" > 
+    <label for="bio" class="words">Bio:</label> 
+    <input class="input" type="text" name="bio" placeholder="Enter Your Bio" required>
+  </div>
+  <br><br>
+  <div class = "form-group" > 
+    <label for="Picture" class="words"> Picture:</label> 
+    <input class="input" type="text" name="picture" placeholder="Enter Your Picture" required>
+  </div>
   <br>
   <input type="hidden" name="user_id" value= "{{ session['user_id'] }}" >
   <button class="button2s" type="submit">Submit</button>
