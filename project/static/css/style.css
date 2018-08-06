@@ -2,6 +2,49 @@
 .body1{
      background-image: url("image1.png");
      height: 100%; 
+}
+
+.apply-img{
+    background-image: url("image1.png");
+    height: 100%; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.browse-parallax {
+    /* The image used */
+    background-image: url("boat.jpg");
+
+    /* Set a specific height */
+    height: 500px;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.journey-cont {
+
+    position: relative;
+    text-align: center;
+    color: black;
+    font-size: 14px;
+}
+
+.journey-img{
+
+    width:300px ;
+    height:200px; 
+    -webkit-filter: brightness(1);
+    filter: brightness(1);
+}
+
+.browse-img{
+    background-image: url("{{ url_for('static', filename='pictures/boat.jpg') }}");
+    height: 100%; 
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -14,10 +57,26 @@
     background-size: cover;
 }
 
+.cover {
+    /* The image used */
+    /* Set a specific height */
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+.row{
+    width: 100%
+
+}
+
+
 .navbar-inner {
     background-color:transparent;
     color:white;
-    font: normal 18px/1 Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif,bold; ;
+    font: normal 20px/1 Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif,bold; ;
+
 }
 
 .nav-option-border {
@@ -48,7 +107,12 @@
 
     cursor: pointer;
 
-    border-radius:7px;
+}.container {
+        width: 100%;
+        height: 90px;
+        margin: 0 auto;
+        background-color: rgba(255,255,255,0.5);
+        border-radius:7px;
 }
 
 
@@ -171,7 +235,91 @@
 
 .div2{
      background:rgba(400,400,400,0.0);
+    border-radius:7px;
+}
+.typewriter{
+    position: absolute;
+    top: 200px;
+    left: 75px;
+}
+.typewriter h1 {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid orange; 
+  color:white;/* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+    typing 2.5s steps(40, end),
+    blink-caret .75s step-end infinite,
+    blink-caret infinite;
+    
+}
 
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange; }
+}
+
+
+/*browse view details button design
+*/
+.myButton {
+    -moz-box-shadow: 0px 10px 14px -7px #276873;
+    -webkit-box-shadow: 0px 10px 14px -7px #276873;
+    box-shadow: 0px 10px 14px -7px #276873;
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #dbf5ff), color-stop(1, #408c99));
+    background:-moz-linear-gradient(top, #dbf5ff 5%, #408c99 100%);
+    background:-webkit-linear-gradient(top, #dbf5ff 5%, #408c99 100%);
+    background:-o-linear-gradient(top, #dbf5ff 5%, #408c99 100%);
+    background:-ms-linear-gradient(top, #dbf5ff 5%, #408c99 100%);
+    background:linear-gradient(to bottom, #dbf5ff 5%, #408c99 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#dbf5ff', endColorstr='#408c99',GradientType=0);
+    background-color:#dbf5ff;
+    -moz-border-radius:9px;
+    -webkit-border-radius:9px;
+    border-radius:9px;
+    border:2px solid white;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:new roman;
+ 
+    font-size:20px;
+    font-weight:bold;
+    padding:12px 28px;
+    text-decoration:none;
+    text-shadow:0px 1px 50px #528da1;
+}
+.myButton:hover {
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #408c99), color-stop(1, #dbf5ff));
+    background:-moz-linear-gradient(top, #408c99 5%, #dbf5ff 100%);
+    background:-webkit-linear-gradient(top, #408c99 5%, #dbf5ff 100%);
+    background:-o-linear-gradient(top, #408c99 5%, #dbf5ff 100%);
+    background:-ms-linear-gradient(top, #408c99 5%, #dbf5ff 100%);
+    background:linear-gradient(to bottom, #408c99 5%, #dbf5ff 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#408c99', endColorstr='#dbf5ff',GradientType=0);
+    background-color:#408c99;
+}
+.myButton:active {
+    position:relative;
+    top:1px;
+}
+
+.limit{
+    position: absolute;
+    left: 65px;
+    text-align: left;
+    width:200px;
+    word-wrap: break-word;
 }
 
 .info{
@@ -224,9 +372,7 @@
   text-overflow: ellipsis;
 
 }
-.caption{
 
-}
 
 h1{
   font:  normal 50px/1 Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif,bold;

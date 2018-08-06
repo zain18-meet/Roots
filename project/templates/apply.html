@@ -1,6 +1,8 @@
 {% extends "layout.html" %}
 {% block content %}
-  <body class="body1">
+
+<body class="body1">
+
 <center>
 <!--   Hi {{ current_user.name }}, -->
   <br><br><br>
@@ -9,12 +11,12 @@
   <br>
   <hr style="border: 0.5px solid white; "/>
   <p class="div1"> Emphasis on the Storytellers feelings and experience, not on facts.<br> How your life story affected you.
-Don’t include details that aren’t necessary or interesting, and don’t be repetitive.<br>
-Talk about a challenge or hardship you overcame.<br>
-Talk about your desires, dreams,...<br>
-Try to include something for people to take away from your story: message, life lesson, values, inspiration, etc…<br>
-Be careful with your words- remember that your listeners may know nothing about your community, culture, or way of living. <br> What you say is what they know.
- </p>
+  Don’t include details that aren’t necessary or interesting, and don’t be repetitive.<br>
+  Talk about a challenge or hardship you overcame.<br>
+  Talk about your desires, dreams,...<br>
+  Try to include something for people to take away from your story: message, life lesson, values, inspiration, etc…<br>
+  Be careful with your words- remember that your listeners may know nothing about your community, culture, or way of living. <br> What you say is what they know.
+   </p>
 <hr style="border: 0.5px solid white;" />  
   <br><br>
    <form class="div2" action="{{url_for('apply')}}" method="POST">

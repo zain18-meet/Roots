@@ -1,91 +1,81 @@
 {% extends "layout.html" %}
 {% block content %}
 
-
-<!--
-<div class= "container-fluid">
-<img src="{{ journey.picture }} " style="width: 1600px; height: 450px; position: relative; top: -20px; left: -405px;">
--->
-
- <div class="container">
+ <div class="container-fluid">
   <img src="{{ journey.picture }} " alt="Snow" style="width: 1600px; height: 450px; position: relative; top: -20px; left: -405px;">
   <div class="Title">{{journey.title}}</div>
-</div> 
-
 
 
 
 <div class="row">
-  <div class="col-sm-6 col-md-4">
-    <div class="thumbnail">
-      <img src="{{url_for('static', filename='profile.png')}}" class="img-fluid" alt="Responsive image" style="border-radius: 100%; width: 300px; height: 300px; position: relative; top: -10px; left: 330px;"> 
+    <div class="col-sm-4 col-md-3">
+	    <div class="thumbnail">
+	        <img src="{{url_for('static', filename='profile.png')}}"  alt="Responsive image"> 
 
-      <div class="caption">
-        <h3><a href="{{url_for('profile', user_id=journey.creator_id)}}"> {{creator.name}} </a></h3>
-        <p>{{creator.bio}}</p>
-      </div>
+	        <div class="caption">
+	            <h3><a href="{{url_for('profile', user_id=journey.creator_id)}}"> {{creator.name}} </a></h3>
+	            <p>{{creator.bio}}</p>
+	        </div>
+	    </div>
     </div>
-  </div>
+    <div class = "col-md-9">
+				<p> location : {{journey.location}} </p>
+				<p> description : {{journey.description}} </p>
+				<p> duration : {{journey.duration}} </p>
+				<p> price : {{journey.price}} </p>
+				<p> category : {{journey.category}} </p>
+				<p> requirements : {{journey.requirements}} </p>
+				<p> people range : {{journey.people_range}} </p>
+				<br>
+			    {% if current_user.is_authenticated %}
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-
-<h1 class="head2">About my journey</h1>
-  <hr style="border: 0.5px solid black; "/>
-	<div class = "col-md-8 info">
-	<p> location : {{journey.location}} </p>
-	<p> description : {{journey.description}} </p>
-	<p> duration : {{journey.duration}} </p>
-	<p> price : {{journey.price}} </p>
-	<p> category : {{journey.category}} </p>
-	<p> requirements : {{journey.requirements}} </p>
-	<p> people range : {{journey.people_range}} </p>
-
-<br>
-    {% if current_user.is_authenticated %}
-
-	<form action="{{url_for('im_interested', interested_user_id=current_user.id, st_id=current_user.id, journey_id=journey.id)}}" method="POST">
-	<button class="button2s" type="submit"> I'm Interested! </button>
-	</form>
- 	{%else%}
- 	<form action="{{url_for('users.login')}}">
- 	<button class="button2s" type="submit"> I'm Interested! </button>	
-    </form>
-    {% endif %}
-
+				<form action="{{url_for('im_interested', interested_user_id=current_user.id, st_id=current_user.id, journey_id=journey.id)}}" method="POST">
+				<button class="button2s" type="submit"> I'm Interested! </button>
+				</form>
+			 	{%else%}
+			 	<form action="{{url_for('users.login')}}">
+			 	<button class="button2s" type="submit"> I'm Interested! </button>	
+			    </form>
+			    {% endif %}
 	</div>
-	</div>
-  <hr style="border: 0.5px solid black; "/>
+</div>
+
+
+
+
+
+
 <div class= "row">
-<div class= "col-md-6">
-<h2 class="head3">Reviews of {{ journey.title }}</h2>
+	<div class= "col-md-6">
+		<h2 class="head3">Reviews of {{ journey.title }}</h2>
 
-{% for rating in all_ratings %}
+		{% for rating in all_ratings %}
 
-{{rating.stars}} stars<br>
-{{rating.title}}
-By:{{rating.user}} <br>
-{{rating.review}}<br>
-at: {{rating.time}}
+		{{rating.stars}} stars<br>
+		{{rating.title}}
+		By:{{rating.user}} <br>
+		{{rating.review}}<br>
+		at: {{rating.time}}
 
-{%endfor%}
+		{%endfor%}
 
-</div>
-<div class= "col-md-6">
-<h2 class="head3"> Questions about {{journey.title}} </h2>
+	</div>
+	<div class= "col-md-6">
+		<h2 class="head3"> Questions about {{journey.title}} </h2>
 
-{% for question in all_questions %}
-{{question.title}} by {{question.user_id}} at {{question.time}}<br>
-{{question.question}}
+		{% for question in all_questions %}
+		{{question.title}} by {{question.user_id}} at {{question.time}}<br>
+		{{question.question}}
 
-{%endfor%}
-</div>
+		{%endfor%}
+	</div>
 </div>
 <div class = "row" >
 <div class= "col-md-6">
 
      {% if current_user.is_authenticated %}
 
-<form action="{{url_for('add_rating', journey_id=journey.id)}}" method="POST">
+	<form action="{{url_for('add_rating', journey_id=journey.id)}}" method="POST">
 	<div class= "i2 form-group" >
 		<label for="stars" class="head4"> Stars </label>
 		<select class="form-control input i1" style="width: 150px">
@@ -148,7 +138,6 @@ at: {{rating.time}}
 
 </div>
 </div>
-
 </div>
 
 
