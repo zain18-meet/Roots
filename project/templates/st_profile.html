@@ -13,7 +13,7 @@
 	<div class = "row" >
 	
 		<div class = "col-md-3" >
-		{% if profile.profile_img !=  none %}
+		{% if profile.profile_img ==  none %}
 		<img src="{{url_for('static', filename='pictures/profile.png')}}" />
 		{% else %}
 		<img src="{{current_user.profile_img}}" />
