@@ -1,33 +1,46 @@
 {% extends "layout.html" %}
 {% block content %}
 
-STORYTELLER PROFILE
+<!-- STORYTELLER PROFILE -->
 
 {% if current_user.id ==  profile.id %}
-	<p>this is your profile. You are a storyteller.<p>
+	<!-- <p>this is your profile. You are a storyteller.<p> -->
 {% else %}
-	<p>this is not your profile</p>
+	<!-- <p>this is not your profile</p> -->
 {% endif %}
 
+<div class = "container-fluid" >
+	<div class = "row" >
+	
+		<div class = "col-md-3" >
+		{% if profile.profile_img ==  none %}
+		<img src="{{url_for('static', filename='pictures/profile.png')}}" />
+		{% else %}
+		<img src="{{current_user.profile_img}}"/>
+		{% endif %}
+		</div>
 
+		<div class = "col-md-9 ">
+		<h2> {{profile.name}} </h2>
+		<h3> {{profile.city}} </h3>
+		<h3> {{profile.country}} </h3>
+		<h3> {{profile.profession}} </h3>
+		</div>
+	</div>
 
-<img src="{{url_for('static', filename='profile.png')}}" />
-<h2> {{profile.name}} </h2>
-<h3> {{profile.email}} </h3>
-{{ profile.country }}
+<h3> {{profile.bio}} </h3>
 
-
-<br><b>
 {{ profile.name }}'s journeys:
-<br></b>
 
 
 
-{% for journey in st_journeys %}
-<a href="{{url_for('display_journey' , journey_id=journey.id)}}">{{ journey.title }}</a> 
-<br>
-{% endfor %}
-
+<div class = "row">
+	{% for journey in st_journeys %}
+		<div class = "col-md-4" >
+		<a href="{{url_for('display_journey' , journey_id=journey.id)}}">{{ journey.title }}</a> 
+		</div>
+	{% endfor %}
+</div>
 
 
 
@@ -38,5 +51,5 @@ STORYTELLER PROFILE
 	</form>
 {% endif %}
 
-
+</div>
 {% endblock %}

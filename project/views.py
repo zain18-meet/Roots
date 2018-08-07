@@ -26,6 +26,8 @@ def apply():
 		current_user.birthday   	= request.form.get('birthday')
 		current_user.city      		= request.form.get('city')
 		current_user.number         = request.form.get('number')
+		current_user.bio            = request.form.get('bio')
+		current_user.profile_img    = request.form.get('picture')
 		current_user.is_storyteller = True
 		db.session.commit()
 		return redirect(url_for('profile', user_id=current_user.id))

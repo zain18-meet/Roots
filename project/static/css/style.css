@@ -1,4 +1,9 @@
 
+.body1{
+     background-image: url("image1.png");
+     height: 100%; 
+}
+
 .apply-img{
     background-image: url("image1.png");
     height: 100%; 
@@ -111,7 +116,7 @@
 }
 
 
-.input {
+/*.input {
    display: inline-block;
   -webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;
@@ -119,7 +124,7 @@
   padding: 10px 20px;
   border: 2px solid white;
   -webkit-border-radius: 10px;
-  border-radius: 30px;
+  border-radius: 5px;
   font: normal 16px/normal Arial;
   color: white;
   -o-text-overflow: clip;
@@ -132,7 +137,7 @@
   -o-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
   transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
 }
-
+*/
 .head1 {
   -webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;
@@ -144,6 +149,39 @@
   text-overflow: ellipsis;
 }
 
+.head2 {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  border: none;
+  font: normal 60px/1 Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif,bold;
+  color: black;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+}
+
+.head3 {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  border: none;
+  font: normal 30px/1 Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif,bold;
+  color: black;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+}
+
+.head4 {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  border: none;
+  font: normal 20px/1 Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif,bold;
+  color: black;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  float: left;
+}
 .div1 {
   -webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;
@@ -167,16 +205,16 @@
 }
 
 .button2s {
- -webkit-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;
   box-sizing: content-box;
   padding: 10px 20px;
-  border: 3px solid white;
+  border: 1px solid black;
   -webkit-border-radius: 10px;
   border-radius: 30px;
   font: normal 16px/normal Arial,bold;
-  color: white;
-  background:rgba(26,255,26,0.6);
+  color: black;
+  background:rgba(0,0,0,0.1);
   
 
 }
@@ -284,3 +322,69 @@
     word-wrap: break-word;
 }
 
+.info{
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  width: 1100px;
+  padding: 20px;
+  overflow: hidden;
+  -webkit-border-radius: 6px;
+  border-radius: 1px;
+  font:normal 20px/1 Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+  color: black;
+  text-align: left;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  background:rgba(0,0,0,0.0);
+}
+
+
+.thumbnail{
+ position: relative;
+ top: -10px;
+ left: 10px;
+ background-color: transparent;
+ border-color: transparent;
+ height: 100px;
+
+}
+
+
+.container {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.Title {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  border: none;
+  font: normal 60px/1 Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif,bold;
+  color: black;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+
+}
+
+
+h1{
+  font:  normal 50px/1 Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif,bold;
+  color: black;
+  text-align: left;
+}
+ .i1{
+  color: black;
+
+ }
+
+ .i2{
+  margin-top: 5px;
+  margin-bottom: 5px;
+ }

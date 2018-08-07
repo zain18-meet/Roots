@@ -1,137 +1,137 @@
 {% extends "layout.html" %}
 {% block content %}
 
-	
 <div class= "container-fluid">
 
 <div class="row">
-  <div class="col-sm-6 col-md-4">
-    <div class="thumbnail">
-      <img src="{{url_for('static', filename='profile.png')}}" class="img-fluid" alt="Responsive image">
-      <div class="caption">
-        <h3><a href="{{url_for('profile', user_id=journey.creator_id)}}"> {{creator.name}} </a></h3>
-        <p>{{creator.bio}}</p>
-      </div>
+    <div class="col-sm-4 col-md-3">
+	    <div class="thumbnail">
+	        <img src="{{url_for('static', filename='profile.png')}}"  alt="Responsive image"> 
+
+	        <div class="caption">
+	            <h3><a href="{{url_for('profile', user_id=journey.creator_id)}}"> {{creator.name}} </a></h3>
+	            <p>{{creator.bio}}</p>
+	        </div>
+	    </div>
     </div>
-  </div>
 
-<div> <img class="img1" src="{{ journey.picture }}"> </div>
-<div> <h1> {{journey.title}} </h1>
-	<h1> storyteller : <a href="{{url_for('profile', user_id=journey.creator_id)}}"> {{creator.name}} </a> </h1>
-	<h1> location : {{journey.location}} </h1>
-	<h1> description : {{journey.description}} </h1>
-	<h1> duration : {{journey.duration}} </h1>
-	<h1> price : {{journey.price}} </h1>
-	<h1> category : {{journey.category}} </h1>
-	<h1> requirements : {{journey.requirements}} </h1>
-	<h1> people range : {{journey.people_range}} </h1>
-	<h1>Price: {{ journey.price }}</h1><br>
-	<br><br>
+    <div class = "col-md-9">
+				<p> location : {{journey.location}} </p>
+				<p> description : {{journey.description}} </p>
+				<p> duration : {{journey.duration}} </p>
+				<p> price : {{journey.price}} </p>
+				<p> category : {{journey.category}} </p>
+				<p> requirements : {{journey.requirements}} </p>
+				<p> people range : {{journey.people_range}} </p>
+				<br>
+			    {% if current_user.is_authenticated %}
 
+				<form action="{{url_for('im_interested', interested_user_id=current_user.id, st_id=current_user.id, journey_id=journey.id)}}" method="POST">
+				<button class="button2s" type="submit"> I'm Interested! </button>
+				</form>
+			 	{%else%}
+			 	<form action="{{url_for('users.login')}}">
+			 	<button class="button2s" type="submit"> I'm Interested! </button>	
+			    </form>
+			    {% endif %}
 
-<!-- <img class="img1" src="{{ journey.picture }}">
- <h1> {{journey.title}} </h1>
-	<div class = "col-md-8">
-	<p> location : {{journey.location}} </p>
-	<p> description : {{journey.description}} </p>
-	<p> duration : {{journey.duration}} </p>
-	<p></p>> price : {{journey.price}} </p>
-	<p> category : {{journey.category}} </p>
-	<p> requirements : {{journey.requirements}} </p>
-	<p> people range : {{journey.people_range}} </p>
- -->
+  		</div>
+</div>
 
-    {% if current_user.is_authenticated %}
-
-	<form action="{{url_for('im_interested', interested_user_id=current_user.id, st_id=current_user.id, journey_id=journey.id)}}" method="POST">
-	<button type="submit"> I'm Interested! </button>
-	</form>
- 	{%else%}
- 	<form action="{{url_for('users.login')}}">
- 	<button type="submit"> I'm Interested! </button>	
-    </form>
-    {% endif %}
-
-	</div>
-	</div>
 
 <div class= "row">
-<div class= "col-md-6">
-<h2>Reviews of {{ journey.title }}</h2>
+	<div class= "col-md-6">
+		<h2 class="head3">Reviews of {{ journey.title }}</h2>
 
-{% for rating in all_ratings %}
+		{% for rating in all_ratings %}
 
-{{rating.stars}} stars<br>
-{{rating.title}}
-By:{{rating.user}} <br>
-{{rating.review}}<br>
-at: {{rating.time}}
+		{{rating.stars}} stars<br>
+		{{rating.title}}
+		By:{{rating.user}} <br>
+		{{rating.review}}<br>
+		at: {{rating.time}}
 
-{%endfor%}
+		{%endfor%}
 
-</div>
-<div class= "col-md-6">
-<h2> Questions about {{journey.title}} </h2>
+	</div>
+	<div class= "col-md-6">
+		<h2 class="head3"> Questions about {{journey.title}} </h2>
 
-{% for question in all_questions %}
-{{question.title}} by {{question.user_id}} at {{question.time}}<br>
-{{question.question}}
+		{% for question in all_questions %}
+		{{question.title}} by {{question.user_id}} at {{question.time}}<br>
+		{{question.question}}
 
-{%endfor%}
-</div>
+		{%endfor%}
+	</div>
 </div>
 <div class = "row" >
 <div class= "col-md-6">
 
      {% if current_user.is_authenticated %}
 
-<form action="{{url_for('add_rating', journey_id=journey.id)}}" method="POST">
-	Stars:
-	<select class="form-control">
-	  <option>1</option>
-	  <option>2</option>
-	  <option>3</option>
-	  <option>4</option>
-	  <option>5</option>
-	</select>
-
-	Title of review:
-	<input type="text" name="title" required>
-	Review:
-	<input type="text" name="review" required>
-	<button type="submit"> Add Review </button>
+	<form action="{{url_for('add_rating', journey_id=journey.id)}}" method="POST">
+	<div class= "i2 form-group" >
+		<label for="stars" class="head4"> Stars </label>
+		<select class="form-control input i1" style="width: 150px">
+		  <option>1</option>
+		  <option>2</option>
+		  <option>3</option>
+		  <option>4</option>
+		  <option>5</option>
+		</select>
+	</div>
+	<br>
+	<div class= "i2 form-group" >
+		<label for="title" class="head4"> Title of review: </label>
+		<input class="input i1" type="text" name="title" required>
+	</div>
+	<br>
+	<div class= "i2 form-group" >
+		<label for="review" class="head4" > Review: </label>
+		<input  class="input i1" type="text" name="review" required>
+	</div>
+	<br>
+	<button class="button2s" type="submit"> Add Review: </button>
 
 	{%else%}
 
-	<input type="text" name="review" required>
-	<button type="submit"> Add Review </button>
+	<input type="text" name="review" >
+	<br>
+	<button class="button2s" type="submit"> Add Review :"</button>
 
 </form>
    {% endif %}
 </div>
+
 <div class= "col-md-6">
 
    {% if current_user.is_authenticated %}
 
 
 <form action="{{url_for('question', journey_id=journey.id)}}" method="POST">
-	Title
-	<input type="text" name="title" required>
-	Question
-	<input type="text" name="question" required>
-	<button type="submit"> Ask! </button>
+	<div class= "i2 form-group" >
+		<label for="title" class="head4"> Title: </label>
+		<input class="input i1" type="text" name="title" required>
+	</div>
+	<br>
+	<div class= "i2 form-group" >
+		<label for="question" class="head4"> Question </label>
+		<input class="input i1" type="text" name="question" required>
+	</div>
+	<br>
+	<button class="button2s" type="submit"> Ask! </button>
 </form>
 
 	    {%else%}
  	<form action="{{url_for('users.login')}}">
- 	<button type="submit"> Ask! </button>	
+ 		<br>
+ 	<button  class="button2s" type="submit"> Ask! </button>	
     </form>
 
     {% endif %}
 
 </div>
 </div>
-
 </div>
 
 
