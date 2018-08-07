@@ -32,7 +32,10 @@
 		    		<div class="col-md-4" >
 	            	<div class="card mb-4 shadow-sm">
 	            	<div class="card-header">
-		    			<img class="journey-img" src="{{ all_journeys[i].picture }}" style="border-radius: 15px;">
+	           
+							<a href="{{url_for('display_journey', journey_id=all_journeys[i].id)}}">
+	    			<img class="journey-img" src="{{ all_journeys[i].picture }}" style="border-radius: 15px;">
+	    		</a>
 	                	<p>{{ all_journeys[i].title }}</p> <br>	
 					</div>
 	                <div class="card-body">
@@ -41,9 +44,9 @@
 			    		<p> This journey would intrest people who are {{ all_journeys[i].category }}</p> <br>
 			    		</div>
 			    		<br><br><br><br><br><br><br>
-			    		<form action="{{url_for('display_journey', journey_id=all_journeys[i].id)}}">
+			    		<!-- <form action="{{url_for('display_journey', journey_id=all_journeys[i].id)}}">
  							<button class="myButton" type="submit""> View Details </button>	
-   						 </form>
+   						 </form> -->
    				   </div>
    						
 
