@@ -89,9 +89,41 @@ at: {{rating.time}}
 <h2 class="head3"> Questions about {{journey.title}} </h2>
 
 {% for question in all_questions %}
-{{question.title}} by {{question.user_id}} at {{question.time}}<br>
-{{question.question}}
+		{{question.title}} by {{question.user_id}} at {{question.time}}<br>
+		{{question.question}}
+<br>
+{{creator.name}} answered:<br>
+{% for answer in all_answers %}
 
+	{% if answer.question_id == question.id %}
+		<b> {{answer.title}}</b>
+		{{answer.answer}} <br>
+	{% endif %}
+{% endfor %}<br><br>
+
+
+
+		{% if current_user.is_authenticated and (current_user.id == journey.creator_id) %}
+
+		<form action="{{url_for('answer', question_id=question.id)}}" method='POST'>
+			<div class= "orm-group" >
+				<label for="title" class="head4"> Title: </label>
+				<br>
+				<input class="input i2 type="text" name="title" required>
+			</div>
+			<br>
+			<div class= "form-group" >
+				<label for="answer" class="head4"> Answer: </label>
+				<br>
+				<input class="input i2" type="text" name="answer" required>
+			</div>
+			<br>
+			<button class="button2s" type="submit"> Answer! </button>
+
+			
+		</form>
+
+		{% endif %}
 {%endfor%}
 </div>
 </div>
@@ -155,6 +187,10 @@ at: {{rating.time}}
 
 
     {% endif %}
+
+
+
+
 
 </div>
 </div>

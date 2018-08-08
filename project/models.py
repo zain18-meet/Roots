@@ -151,6 +151,7 @@ class Wishlist(db.Model):
 
 
 class Question(db.Model):
+    __tablename__ = "question"
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     journey_id = db.Column(db.Integer, db.ForeignKey('journey.id'), nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
@@ -168,7 +169,28 @@ class Question(db.Model):
 
 
     def __repr__(self):
-        return '<Question %r>' % self.title
+        return '<Question %s>' % self.title
+
+
+
+class Answer(db.Model):
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    question_id = db.Column(db.Integer, db.ForeignKey('question.id'), nullable=False)
+    journey_id = db.Column(db.Integer, db.ForeignKey('journey.id'), nullable=False)
+    title = db.Column(db.String(30), nullable = False)
+    answer = db.Column(db.String(80), nullable = False)
+    time = db.Column(db.String(80), nullable = False)
+
+    def __init__(self, question_id='', journey_id='', title='', answer='', time=''):
+        self.question_id = question_id
+        self.journey_id = journey_id
+        self.title = title
+        self.answer = answer
+        self.time = time
+
+    def __repr__(self):
+        return '<Answer %s>' % self.title
+
 
 
 

@@ -5,7 +5,7 @@ from . import app, db
 import time
 from project.forms import RegisterForm, LoginForm
 
-from project.models import Journey, User, Ratings, Notification, Wishlist, Question
+from project.models import Journey, User, Ratings, Notification, Wishlist, Question, Answer
 
 
 @app.route('/')
@@ -128,13 +128,31 @@ def question(journey_id):
 	return redirect(url_for('display_journey', journey_id=journey_id))
 
 
+@app.route('/answer/<int:question_id>', methods=['POST'])
+def answer(question_id):
+	question = Question.query.filter_by(id=question_id).first()
+	journey = Journey.query.filter_by(id=question.journey_id).first()
+	new_answer = Answer()
+	new_answer.question_id = question_id
+	new_answer.journey_id = question.journey_id
+	new_answer.title = request.form.get('title')
+	new_answer.answer = request.form.get('answer')
+	localtime = time.localtime(time.time())
+	new_answer.time = str(localtime[1])+"/"+str(localtime[2])+"/"+str(localtime[0])+" at "+str(localtime[3])+":"+str(localtime[4])
+	db.session.add(new_answer)
+	db.session.commit()
+	return redirect(url_for('display_journey', journey_id=journey.id))
+
+
 @app.route('/journey/<int:journey_id>')
 def display_journey(journey_id):
 	journey = Journey.query.filter_by(id=journey_id).first()
+	print(journey.creator_id)
 	creator = User.query.filter_by(id=journey.creator_id).first()
 	all_ratings = Ratings.query.filter_by(journey_id=journey_id).all()
 	all_questions = Question.query.filter_by(journey_id=journey_id).all()
-	return render_template('journey.html', journey=journey, all_questions=all_questions, creator=creator, all_ratings=all_ratings)
+	all_answers = Answer.query.filter_by(journey_id=journey_id).all()
+	return render_template('journey.html', journey=journey, all_questions=all_questions, all_answers=all_answers, creator=creator, all_ratings=all_ratings)
 
 
 @app.route('/notification/<int:st_id>', methods=['GET'])
