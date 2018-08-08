@@ -50,13 +50,13 @@
 
 
   	<div class = "col-md-8 info">
-	<p class="head4"> location : {{journey.location}} </p>
-	<p class="head4"> description : {{journey.description}} </p>
-	<p class="head4"> duration : {{journey.duration}} </p>
-	<p class="head4"> price : {{journey.price}} </p>
-	<p class="head4"> category : {{journey.category}} </p>
-	<p class="head4"> requirements : {{journey.requirements}} </p>
-	<p class="head4"> people range : {{journey.people_range}} </p>
+	<p class="head4"> Location : {{journey.location}} </p>
+	<p class="head4"> Description : {{journey.description}} </p>
+	<p class="head4"> Duration : {{journey.duration}} </p>
+	<p class="head4"> Price : {{journey.price}} </p>
+	<p class="head4"> Category : {{journey.category}} </p>
+	<p class="head4"> Requirements : {{journey.requirements}} </p>
+	<p class="head4"> People range : {{journey.people_range}} </p>
 
 <br>
     {% if current_user.is_authenticated %}
@@ -95,7 +95,7 @@ at: {{rating.time}}
 {%endfor%}
 </div>
 </div>
-<div class = "row" >
+<div class = "row toppad" >
 <div class= "col-md-6 leftpad">
 
      {% if current_user.is_authenticated and (current_user.id != journey.creator_id) %}
