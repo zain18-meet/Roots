@@ -24,6 +24,9 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+
+
 .profile-parallax {
     /* The image used */
     background-image: url("profile.png");

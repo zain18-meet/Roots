@@ -1,4 +1,21 @@
-<div class="profile-parallax">
+<style >
+
+.journey-parallax{
+	background-image: url("{{journey.picture}}");
+
+
+    height: 500px;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+</style>
+
+
+<div class="journey-parallax" >
 {% extends "layout.html" %}
 {% block content %}
 <center>
@@ -22,7 +39,7 @@
 <div class="row toppad">
   <div class="col-sm-6 col-md-4 leftpad">
     <div class="thumbnail ">
-      <img src="{{url_for('static', filename='profile.png')}}" class="img-fluid" alt="Responsive image" > 
+      <img src="{{creator.profile_img}}" class="img-fluid" alt="Responsive image" > 
 
       <div class="caption">
         <h3 class="head4"><a href="{{url_for('profile', user_id=journey.creator_id)}}"> {{creator.name}} </a></h3>
@@ -30,7 +47,6 @@
       </div>
     </div>
   </div>
-
 
 
   	<div class = "col-md-8 info">
@@ -82,13 +98,12 @@ at: {{rating.time}}
 <div class = "row" >
 <div class= "col-md-6 leftpad">
 
-     {% if current_user.is_authenticated %}
-
+     {% if current_user.is_authenticated and (current_user.id != journey.creator_id) %}
 <form action="{{url_for('add_rating', journey_id=journey.id)}}" method="POST">
 	<div class= "form-group" >
 		<label for="stars" class="head4"> Stars </label>
 		<br>
-		<select class="form-control input i2" style="  width: 30px">
+		<select name='stars' class="form-control input i2" style="  width: 30px">
 		  <option>1</option>
 		  <option>2</option>
 		  <option>3</option>
@@ -119,7 +134,7 @@ at: {{rating.time}}
 
 <div class= "col-md-6">
 
-   {% if current_user.is_authenticated %}
+   {% if current_user.is_authenticated and (current_user.id != journey.creator_id) %}
 
 
 <form action="{{url_for('question', journey_id=journey.id)}}" method="POST">
