@@ -5,20 +5,23 @@
 
 
 <div class="bg_blue1">
- <center>
-	<br><h1 style="color: white;">Notifications<h1><br><br>
-{% for notification in all_notifications %}
+ 	<center>
+		<br><h1 style="color: white;">Notifications</h1><br><br>
+	 	{% for notification in all_notifications %}
 
-{{notification.interested_user_name}} is interested in your journey {{notification.journey_title}}
 
-<br>
-{{notification.time}}
-<br>
--------------------
-<br>
-</center>
-{%endfor%}
+		<h3 class="noti-text">{{notification.interested_user_name}}</h3> <br>
+		<h4 class="noti-text"> is interested in your journey {{notification.journey_title}} <h4>
 
+		<br>
+		<p class="noti-text">{{notification.time}}<p>
+
+		<br>
+		___________________________________________________
+
+		<br><br>
+		{%endfor%}
+	 </center>
 </div>
 
 

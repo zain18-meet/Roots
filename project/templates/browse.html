@@ -29,32 +29,25 @@
 		    	<a href="{{url_for('display_journey', journey_id=all_journeys[i].id)}}"> View Details </a> -->
 
 		    	<center>
-		    	<div class="journey-cont">
-		    		<div class="col-md-4" >
-	            	<div class="card mb-4 shadow-sm">
-	            	<div class="card-header">
-	           
-							<a href="{{url_for('display_journey', journey_id=all_journeys[i].id)}}">
-	    			<img class="journey-img" src="{{ all_journeys[i].picture }}" style="border-radius: 17px;">
-	    		</a>
-	                		
-					</div>
-	                <div class="card-body">
-	                	<div class="limit">
-	                	<p class="head7">{{ all_journeys[i].title }}</p> 
-			    		<p class="head5">The journey will be at {{ all_journeys[i].location }}</p> 
-			    		<p class="head5"> This journey would intrest people who are {{ all_journeys[i].category |truncate(15) }}</p> <br>
-			    		</div>
-			    		<br><br><br><br><br><br><br>
-			    		<!-- <form action="{{url_for('display_journey', journey_id=all_journeys[i].id)}}">
- 							<button class="myButton" type="submit""> View Details </button>	
-   						 </form> -->
-   				   </div>
-   						
-
-	                    <!--<small class="text-muted">1 Hour</small> -->
-	                  </div>
-	                </div>
+			    	<div class="journey-cont">
+			    		<div class="col-md-4" >
+		            	<div class="card mb-4 shadow-sm">
+		            	<div class="thumnail">
+		            		<a href="{{url_for('display_journey', journey_id=all_journeys[i].id)}}">
+		            			<img class="journey-img" src="{{ all_journeys[i].picture }}">
+		            		</a>		
+		                <div class="caption">
+		                	<div class="limit">
+		                		<br>
+		                	<p class="head7">{{ all_journeys[i].title }}</p> 
+				    		<p class="head5">The journey will be at {{ all_journeys[i].location }}</p> 
+				    		<p class="head5"> This journey would intrest people who are {{ all_journeys[i].category |truncate(15) }}</p>
+				    		<br><br><br><br><br><br><br>
+	   				   	</div>
+	   					</div>
+	   					</div>
+		                </div>
+		            </div>
 	            </center>
 
 
